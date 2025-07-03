@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+  h2 Skills
+  a.btn.btn-primary.mb-3(href='/admin/skills/add') Add Skill
+  if skills.length
+    table.table.table-bordered.table-hover
+      thead
+        tr
+          th Name
+          th Level
+          th Category
+          th
+      tbody
+        each skill in skills
+          tr
+            td= skill.name
+            td= skill.level
+            td= skill.category
+            td
+              a.btn.btn-danger.btn-sm(href=`/admin/skills/delete/${skill._id}`) Delete
+  else
+    p No skills yet. 

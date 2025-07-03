@@ -1,0 +1,29 @@
+extends ../layout
+
+block content
+  h2 Projects
+  a.btn.btn-primary.mb-3(href='/admin/projects/add') Add Project
+  if projects.length
+    table.table.table-bordered.table-hover
+      thead
+        tr
+          th Title
+          th Description
+          th Tech Stack
+          th GitHub
+          th Image
+          th
+      tbody
+        each project in projects
+          tr
+            td= project.title
+            td= project.description
+            td= project.techStack.join(', ')
+            td: a(href=project.githubUrl, target='_blank') Link
+            td
+              if project.image
+                img(src=project.image, alt='img', style='width:60px;height:40px;object-fit:cover;')
+            td
+              a.btn.btn-danger.btn-sm(href=`/admin/projects/delete/${project._id}`) Delete
+  else
+    p No projects yet. 

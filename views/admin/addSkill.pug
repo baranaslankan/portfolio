@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  h2 Add Skill
+  form(method='POST', action='/admin/skills/add')
+    .mb-3
+      label.form-label(for='name') Name
+      input.form-control(type='text', name='name', required)
+    .mb-3
+      label.form-label(for='level') Level
+      input.form-control(type='text', name='level', required)
+    .mb-3
+      label.form-label(for='category') Category
+      input.form-control(type='text', name='category', required)
+    button.btn.btn-primary(type='submit') Add
+    a.btn.btn-secondary.ms-2(href='/admin/skills') Cancel 

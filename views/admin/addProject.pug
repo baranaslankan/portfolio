@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  h2 Add Project
+  form(method='POST', action='/admin/projects/add')
+    .mb-3
+      label.form-label(for='title') Title
+      input.form-control(type='text', name='title', required)
+    .mb-3
+      label.form-label(for='description') Description
+      textarea.form-control(name='description', rows='2', required)
+    .mb-3
+      label.form-label(for='techStack') Tech Stack (comma separated)
+      input.form-control(type='text', name='techStack', required)
+    .mb-3
+      label.form-label(for='githubUrl') GitHub URL
+      input.form-control(type='url', name='githubUrl')
+    .mb-3
+      label.form-label(for='image') Image URL
+      input.form-control(type='text', name='image')
+    button.btn.btn-primary(type='submit') Add
+    a.btn.btn-secondary.ms-2(href='/admin/projects') Cancel 

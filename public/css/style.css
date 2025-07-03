@@ -1,0 +1,9 @@
+body { font-family: 'Inter', Arial, sans-serif; }
+.table { background: #fff; }
+.btn-primary { background: #4a4e69; border: none; }
+.btn-danger { background: #c9ada7; border: none; color: #22223b; }
+.navbar { background: #22223b; }
+@media (max-width: 600px) {
+  .table { font-size: 14px; }
+  .navbar-brand { font-size: 18px; }
+} 
